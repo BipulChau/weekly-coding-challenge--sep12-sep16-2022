@@ -1,21 +1,24 @@
-def checkIfStringIsHexCode(str):
-    new_str = str[1::]
+def checkIfStringIsHexCode(string):
+    new_str = string[1::]
     length_of_string = len(new_str)
-    digit = [x for x in range(0, 10)]
+    digit = [str(x) for x in range(10)]
     alphabet = ['A', 'B', 'C', 'D', 'E', 'F', 'a', 'b', 'c', 'd', 'e', 'f']
     digit.extend(alphabet)
-    # print(digit)
+    result_list = []
+    print(digit)
     # print(str[0])
-    if str[0] != '#' and len != 6:
+    if string[0] != '#' and len != 6:
         return False
     else:
         for i in new_str:
-            if i not in digit:
-                return False
+            if i in digit:
+                print(i)
+                result_list.append(True)
             else:
-                return True
-
+                print(i)
+                result_list.append(False)
+    print(result_list)
 
 print(checkIfStringIsHexCode("#CD5C5C"))
-print(checkIfStringIsHexCode("CD5C5C"))
-print(checkIfStringIsHexCode("#CD5C&C"))
+# print(checkIfStringIsHexCode("CD5C5C"))
+# print(checkIfStringIsHexCode("#CD5C&C"))
